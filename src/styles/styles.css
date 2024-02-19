@@ -1,0 +1,54 @@
+
+/* Responsive Styling */
+@media (max-width: 768px) { 
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    display: none;          /* Initially hide on mobile */
+  }
+
+  .nav-links.active { 
+    display: block;         /* Show links when menu is toggled */
+  }
+
+  .hamburger-menu {       /* Add a menu toggle button */
+    display: block;
+  }
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+  /* ...existing styles... */
+  opacity: 0;  
+  transform: translateY(-10px); 
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Menu Slide-in  */
+.nav-links.active {
+  transform: translateX(0); /* Slide from the right - adjust if needed  */
+}
+
+@media (min-width: 768px) { /* Undo on larger screens (adjust breakpoint) */
+  .nav-links {
+    transform: none; 
+  }
+} 
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* CTA Button */
+.btn-cta {
+  background-color: #4CAF50; /* Example color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+}
